@@ -197,13 +197,9 @@ class TrainingModel(BaseEstimator, TransformerMixin):
         input_sequences = X[0]
         self.model.compile(optimizer=Adam(0.001), loss=dm.custom_loss, metrics=[dm.new_acc])
         z = np.zeros((len(input_sequences), config.LATENT_DIM_DECODER))
-        print(np.array(input_sequences))
-        print(type(X[0]))
-        print(type(X[1]))
-        print(type(X[2]))
         self.model.fit(
             [np.array(input_sequences), X[1], z, z],
             X[2],
-            epochs=10,
+            epochs=2,
             batch_size=config.BATCH_SIZE
         )

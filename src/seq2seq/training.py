@@ -12,6 +12,7 @@ sys.path.append(CODE_DIR)
 import seq2seq.pipeline as pipe
 
 import seq2seq.processing.data_management as dm
+from config import config
 
 
 
@@ -25,7 +26,8 @@ def run_training():
     print(training_model.summary())
     classifier_pipe = pipe.create_train_pipeline(training_model, input_tokenizer, output_tokenizer)
     print(df.head())
-    classifier_pipe.fit(df)
+    trained_pipe = classifier_pipe.fit(df)
+    trained_pipe['Model'].model.save_weights(config.TRAINED_WEIGHTS)
     return df
     #trained_pipe = classifier_pipe.fit(df, df["labels"])
     #trained_pipe['Model'].model.save_pretrained('new_model')

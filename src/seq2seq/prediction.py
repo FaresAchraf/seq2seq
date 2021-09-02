@@ -33,4 +33,4 @@ def get_prediction() -> pd.DataFrame:
 if __name__ == '__main__':
     df2 = get_prediction()
 
-    df2.head()
+    print(df2.head())

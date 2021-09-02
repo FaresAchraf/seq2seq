@@ -13,12 +13,14 @@ sys.path.append(CODE_DIR)
 TEST_PATH = abspath(join(CODE_DIR, 'data', 'test.csv'))
 DATA_PATH = abspath(join(CODE_DIR, 'data', 'categorical_data.csv'))
 WEIGHTS_DIR = abspath(join(CODE_DIR, 'trained_model', 'seq2seq.h5'))
+TRAINED_WEIGHTS = abspath(join(CODE_DIR, 'new_model', 'seq2seq.h5'))
+
 INPUT_TOKENIZER_DIR = abspath(join(CODE_DIR, 'trained_model', 'tokenizer.json'))
 OUTPUt_TOKENIZER_DIR = abspath(join(CODE_DIR, 'trained_model', 'output_tokenizer.json'))
 EMBEDDING_DIR = abspath(join(CODE_DIR, 'trained_model', 'Datagram_w2v_with_target.text'))
 
 CONF_DIR = abspath(join(THIS_DIR, '../', 'trained_model','models','config.json'))
-MODEL_DIR = abspath(join(THIS_DIR, '../', 'trained_model','models'))
+
 ID2LABEL_PATH = abspath(join(THIS_DIR, 'id2label.json'))
 LABEL2ID_PATH = abspath(join(THIS_DIR, 'label2id.json'))
 PCLASS2CATEGORY = abspath(join(CODE_DIR, 'config', 'PclassClass2category_id.json'))

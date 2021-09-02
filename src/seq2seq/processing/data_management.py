@@ -113,7 +113,7 @@ def load_training_model(df, max_len_target=3):
                                  max_len_target=max_len_target,
                                  number_words_output=len(output_tokenizer.word_index) + 1)
     training_model = model_class.build_training_model()
-    training_model.load_weights(config.WEIGHTS_DIR, by_name=True)
+    training_model.load_weights(config.WEIGHTS_DIR, by_name=True, skip_mismatch=True)
 
     return training_model, input_tokenizer, output_tokenizer
 
